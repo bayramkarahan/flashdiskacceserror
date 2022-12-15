@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "tmpfs /media tmpfs rw 0 0" >> /etc/fstab
+
+exit 0

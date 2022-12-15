@@ -1,0 +1,11 @@
+#!/bin/sh
+find /media -type d | sort -V | while read line ; do
+    if mount | grep -e "on $line type" &>/dev/null ; then
+        umount -lf -R $line
+    fi
+done
+find /media -type d | sort -r | while read line ; do
+    rmdir $line
+done
+mkdir /media/
+exit 0
